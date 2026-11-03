@@ -60,7 +60,7 @@ The UI is identical to the web app, but the webview underneath differs, so a few
 The desktop app has no separate UI code — it bundles the exact same `out/` static export used by the web deploy. There is one source of truth: `app/`, `components/`, `lib/`. Any change made there applies to both automatically once each side rebuilds; there's nothing to keep in sync by hand.
 
 - **Web app**: Netlify auto-deploys on every push to `main` (see `netlify.toml`).
-- **Desktop app**: [`.github/workflows/build-desktop.yml`](.github/workflows/build-desktop.yml) auto-builds Windows + macOS installers on every push to `main` and publishes them to a rolling [`latest-build` release](https://github.com/wertheim-asher/PDFusion/releases/tag/latest-build) — always the current state of `main`, no manual rebuild needed.
+- **Desktop app**: [`.github/workflows/build-desktop.yml`](.github/workflows/build-desktop.yml) auto-builds Windows + macOS installers on every push to `main` and publishes them to a rolling [`latest-build` release](https://github.com/asher-wertheim/PDFusion/releases/tag/latest-build) — always the current state of `main`, no manual rebuild needed.
   - macOS builds are ad-hoc signed (not notarized — no Apple Developer account configured), so first launch requires right-click → Open to bypass Gatekeeper.
   - Trigger a build manually from the Actions tab (`workflow_dispatch`) if needed.
 
